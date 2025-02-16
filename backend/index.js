@@ -1,4 +1,4 @@
-import express, { request } from "express";
+import express from "express";
 import { PORT , mongoDBURL } from "./config.js";
 import mongoose from "mongoose";
 import booksRoutes from "./routes/booksRoutes.js";
@@ -8,11 +8,7 @@ const app = express()
 
 //Middleware for parsing request body
 app.use(express.json())
-app.use(cors({
-    origin: 'http://localhost:5000',
-    methode: ['GET','POST','PUT','DELETE'],
-    allowedHeaders: ['Content- Type'],
-}));
+app.use(cors());
 app.get('/', (req,res) => {
     console.log(req)
     return res.status(234).send('welcom to Mern')
