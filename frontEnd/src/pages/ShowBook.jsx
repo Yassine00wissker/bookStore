@@ -9,7 +9,8 @@ function ShowBook() {
   const [loading, setLoading] = useState(false);
   const { id } = useParams();
 
-  useEffect(() =>
+  useEffect(() =>{
+    setLoading(true)
     axios.get(`http://localhost:5000/books/${id}`)
       .then((response) => {
         setBook(response.data);
@@ -19,7 +20,7 @@ function ShowBook() {
         console.log('error in fetching data', error);
         setLoading(false)
       })
-    , [])
+    }, [id])
 
   return (
 
