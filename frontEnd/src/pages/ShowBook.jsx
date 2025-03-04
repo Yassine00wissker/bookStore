@@ -24,32 +24,32 @@ function ShowBook() {
 
   return (
 
-    <div className='block m-3'>
+    <div className='container mt-4'>
       <BackButtonn />
-      <h1 className='d-flex justify-content-center'>Show Book</h1>
+      <h1 className='d-flex justify-content-center'>Details Book : {book.title}</h1>
       {loading ? (
         <Spinner />
       ) : (
         <div className="d-flex justify-content-center">
           <div className='border border-success p-5 m-5' >
             <div>
-              <span>Title</span>
+              <span>Title : </span>
               <span>{book.title}</span>
             </div>
             <div>
-              <span>autor</span>
-              <span>{book.autor}</span>
+              <span>author : </span>
+              <span>{book.author}</span>
             </div>
             <div>
-              <span>publish year</span>
-              <span>{book.publishyear}</span>
+              <span>publish year : </span>
+              <span>{book.publishYear}</span>
             </div>
             <div>
-              <span>Created Time</span>
+              <span>Created Time : </span>
               <span>{new Date(book.createdAt).toString()}</span>
             </div>
             <div>
-              <span>last update Time</span>
+              <span>last update Time : </span>
               <span>{new Date(book.updatedAt).toString()}</span>
             </div>
           </div>
